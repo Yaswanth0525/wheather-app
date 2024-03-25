@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+    }
+    form {
+      margin: 0 auto;
+      text-align: center;
+    }
+    input[type="text"] {
+      width: 200px;
+      padding: 10px;
+      margin-bottom: 10px;
+      text-align: right;
+    }
+    input[type="button"] {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      margin: 5px;
+      border: none;
+      cursor: pointer;
+      background-color: #f0f0f0;
+    }
+    input[type="button"]:hover {
+      background-color: #d9d9d9;
+    }
+    input[type="button"][value="="] {
+      background-color: #ffcc00;
+    }
+    input[type="button"][value="="]:hover {
+      background-color: #e6b800;
+    }
+  </style>
+</head>
+<body>
+  <h1>Calculator</h1>
+  <form>
+    <input type="text" name="display" value="0">
+    <br>
+    <input type="button" value="7" onclick="display.value += '7'">
+    <input type="button" value="8" onclick="display.value += '8'">
+    <input type="button" value="9" onclick="display.value += '9'">
+    <input type="button" value="/" onclick="display.value += '/'">
+    <br>
+    <input type="button" value="4" onclick="display.value += '4'">
+    <input type="button" value="5" onclick="display.value += '5'">
+    <input type="button" value="6" onclick="display.value += '6'">
+    <input type="button" value="*" onclick="display.value += '*'">
+    <br>
+    <input type="button" value="1" onclick="display.value += '1'">
+    <input type="button" value="2" onclick="display.value += '2'">
+    <input type="button" value="3" onclick="display.value += '3'">
+    <input type="button" value="-" onclick="display.value += '-'">
+    <br>
+    <input type="button" value="0" onclick="display.value += '0'">
+    <input type="button" value="." onclick="display.value += '.'">
+    <input type="button" value="+" onclick="display.value += '+'">
+    <input type="button" value="=" onclick="calculate()">
+  </form>
+
+  <script>
+    function calculate() {
+      var result = eval(display.value);
+      display.value = result;
+    }
+  </script>
+</body>
+</html>
